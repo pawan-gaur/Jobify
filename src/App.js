@@ -1,10 +1,12 @@
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import Input from "./components/Input/Input";
 import Seat from "./components/Seat/Seat";
 import AirplaneSeating from "./helper/AirplaneSeating";
 import {inputPassengers, inputSeats} from "./InputData";
 
 import './App.css';
+import Topbar from "./components/topbar/Topbar";
+import Sidebar from "./components/sidebar/Sidebar";
 
 function App() {
     const [data, setData] = useState(null);
@@ -21,12 +23,14 @@ function App() {
 
     return (
         <div className="app">
+            <Topbar/>
             <div className="container">
-                <h1>Airplane Seating Algorithm</h1>
-                <Input
-                    createNewPlane={createNewPlane}
-                />
-                <Seat data={data}/>
+                <Sidebar/>
+                <div className="others">
+                    <h2>Airplane Seating Algorithm</h2>
+                    <Input createNewPlane={createNewPlane}/>
+                    <Seat data={data}/>
+                </div>
             </div>
         </div>
     );
