@@ -1,0 +1,1 @@
+# squareshift-airplane-sitting-algorithm
