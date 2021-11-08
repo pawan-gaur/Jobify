@@ -28,10 +28,7 @@ export default function Input({createNewPlane}) {
             setError({error: "Passengers must be at least 0."});
             return false;
         }
-        if (
-            !isValid2dArray(seat, isRowsAndColsLessThan, 5, 100) ||
-            seat.length >= 5
-        ) {
+        if (!isValid2dArray(seat, isRowsAndColsLessThan, 5, 100) || seat.length >= 5) {
             setError({
                 error: "Seats must be a valid array according to above rules.",
             });
@@ -82,13 +79,11 @@ export default function Input({createNewPlane}) {
                         <button onClick={modalHandler} className="cancel">
                             Cancel
                         </button>
-                        {error
-                            ? error.error !== null && (
+                        {error ? error.error !== null && (
                             <div className="errorMsg">
                                 <p>{error.error}</p>
                             </div>
-                        )
-                            : null}
+                        ) : null}
                     </form>
                 </div>
             )}

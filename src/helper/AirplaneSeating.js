@@ -62,10 +62,7 @@ export default class AirplaneSeating {
                     return;
                 }
                 if (seatI > 0 && seatI < row.length) {
-                    if (
-                        seat === "seat" &&
-                        (row[seatI - 1] === "aisle" || row[seatI + 1] === "aisle")
-                    ) {
+                    if ( seat === "seat" && (row[seatI - 1] === "aisle" || row[seatI + 1] === "aisle")) {
                         seats[rowI][seatI] = this.nextSeatNumber;
                         this.nextSeatNumber++;
                         this.remainingPassengers--;
@@ -102,9 +99,7 @@ export default class AirplaneSeating {
                 if (this.remainingPassengers < 1) {
                     return;
                 }
-                if (
-                    seat === "seat" &&
-                    !(
+                if (seat === "seat" &&!(
                         seatI === 0 ||
                         seatI === row.length - 1 ||
                         row[seatI - 1] === "aisle" ||

@@ -23,7 +23,9 @@ function App() {
         <div className="app">
             <div className="container">
                 <h1>Airplane Seating Algorithm</h1>
-                <Input createNewPlane={createNewPlane}/>
+                <Input
+                    createNewPlane={createNewPlane}
+                />
                 <Seat data={data}/>
             </div>
         </div>

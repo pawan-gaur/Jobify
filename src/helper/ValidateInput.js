@@ -3,8 +3,7 @@ export function isValid2dArray(input, optCondition, ...optConParams) {
         input.constructor === Array &&
         input[0][0] &&
         input[0].constructor === Array
-    )
-    ) {
+    )) {
         return false;
     }
     if (optCondition) {

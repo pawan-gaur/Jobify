@@ -28,27 +28,18 @@ export default function Seat({data}) {
                                 {row.map((seat, seatI) => {
                                     if (Number.isInteger(seat)) {
                                         return (
-                                            <div
-                                                key={"seat" + seatI}
-                                                className="ui blue circular label"
-                                            >
+                                            <div key={"seat" + seatI} className="ui blue circular label">
                                                 {seat}
                                             </div>
                                         );
                                     }
                                     if (seat === "seat") {
                                         return (
-                                            <div
-                                                key={"seat" + seatI}
-                                                className="ui brown circular label"
-                                            ></div>
+                                            <div key={"seat" + seatI} className="ui brown circular label" ></div>
                                         );
                                     }
                                     return (
-                                        <div
-                                            key={"seat" + seatI}
-                                            className="ui white circular label"
-                                        ></div>
+                                        <div key={"seat" + seatI} className="ui white circular label" ></div>
                                     );
                                 })}
                             </div>
