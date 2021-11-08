@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import {useEffect, useState} from "react";
+import Input from "./components/Input/Input";
+import Seat from "./components/Seat/Seat";
+import AirplaneSeating from "./helper/AirplaneSeating";
+import {inputPassengers, inputSeats} from "./InputData";
+
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        createNewPlane(inputSeats, inputPassengers);
+    }, []);
+
+    const createNewPlane = (inputSeats, inputPassengers) => {
+        const airplane = new AirplaneSeating(inputSeats, inputPassengers);
+        const seatingData = airplane.autoAssignedSeats;
+        setData(seatingData);
+    };
+
+    return (
+        <div className="app">
+            <div className="container">
+                <h1>Airplane Seating Algorithm</h1>
+                <Input createNewPlane={createNewPlane}/>
+                <Seat data={data}/>
+            </div>
+        </div>
+    );
 }
 
 export default App;
