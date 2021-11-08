@@ -2,12 +2,18 @@
 /node_modules
 /.pnp
 .pnp.js
+release/
+package-lock.json
 
 # testing
 /coverage
 
 # production
 /build
+
+# IntelliJ
+.idea/
+/out/
 
 # misc
 .DS_Store
